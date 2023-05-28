@@ -8,6 +8,8 @@ The server implementation for all levels can be seed under [`app.py`](app.py).
 
 [`solver.py`](solver.py) includes examples of how to attack the form in each level.
 
+The application is deployed online and can be accessed at [ https://grdddj.eu/form_security]( https://grdddj.eu/form_security).
+
 ### Level 0 (plaintext GET)
 
 The form uses plaintext `GET` HTTP request to send the `PIN` to the server. Because of this, the `PIN` is visible in the URL bar and transmitted unsecurely over the network. This gives an attacker an easy way to start brute-forcing the PIN easily or intercepting the PIN in the network.
