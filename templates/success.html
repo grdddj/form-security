@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Sukces</title>
     <style>
@@ -8,13 +9,15 @@
         }
     </style>
 </head>
+
 <body>
     <h1>Sukces</h1>
-    <p>Dobrá práce, hacknul jsi {{ level }}!</p>
-{% if next_level %}
-    <p>Pokračuj na <a href="{{ next_level }}">další level</a>!</p>
-{% else %}
-    <p>Zvládnul jsi všechny levely!</p>
-{% endif %}
+    <p>Good job, you hacked level {{ level }}!</p>
+    {% if next_level %}
+    <p>Continue to <a href="{{ next_level }}">next level</a>!</p>
+    {% else %}
+    <p>You have beaten all levels!</p>
+    {% endif %}
 </body>
+
 </html>
