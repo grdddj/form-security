@@ -22,13 +22,15 @@
 <body>
     <div>
         <h1>Sukces</h1>
-        <p>Good job, you hacked {{ level }}!</p>
         {% if next_level %}
+        <p>Good job, you hacked {{ level }}!</p>
         <p>Continue to <a href="{{ next_level }}">next level</a>!</p>
         {% else %}
         <p>You have beaten all levels!</p>
+        <p>Check out the <a href="https://github.com/grdddj/form-security#html-form-attacks-and-defences">repository</a>
+            for this project.</p>
+        {% endif %}
     </div>
-    {% endif %}
 </body>
 
 </html>
