@@ -7,16 +7,26 @@
         body {
             background-color: rgb(0, 255, 89);
         }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Sukces</h1>
-    <p>Good job, you hacked {{ level }}!</p>
-    {% if next_level %}
-    <p>Continue to <a href="{{ next_level }}">next level</a>!</p>
-    {% else %}
-    <p>You have beaten all levels!</p>
+    <div>
+        <h1>Sukces</h1>
+        <p>Good job, you hacked {{ level }}!</p>
+        {% if next_level %}
+        <p>Continue to <a href="{{ next_level }}">next level</a>!</p>
+        {% else %}
+        <p>You have beaten all levels!</p>
+    </div>
     {% endif %}
 </body>
 
