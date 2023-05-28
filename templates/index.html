@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            background-color: rgb(238, 255, 0);
+        }
+        div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Level {{ level }}</h1>
+        <h3>Zadejte čtyřmístný PIN</h3>    
+        <form action="?" method="{{ method }}">
+{% if token %}
+            <input type="hidden" name="token" value="{{ token }}"/>
+{% endif %}
+            <input type="password" name="pin" pattern="[0-9]{4}" inputmode="numeric" placeholder="PIN" required>
+            <input type="submit" value="Odeslat">
+        </form>
+{% if invalid_pin %}
+        <p style="color: red;">Špatný PIN!</p>
+{% endif %}
+    </div>
+</body>
+</html>

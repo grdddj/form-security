@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sukces</title>
+    <style>
+        body {
+            background-color: rgb(0, 255, 89);
+        }
+    </style>
+</head>
+<body>
+    <h1>Sukces</h1>
+    <p>Dobrá práce, hacknul jsi {{ level }}!</p>
+{% if next_level %}
+    <p>Pokračuj na <a href="{{ next_level }}">další level</a>!</p>
+{% else %}
+    <p>Zvládnul jsi všechny levely!</p>
+{% endif %}
+</body>
+</html>
