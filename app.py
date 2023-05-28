@@ -50,7 +50,7 @@ async def level_0_get_for_everything(request: Request):
             {
                 "request": request,
                 "level": "level 0",
-                "next_level": "/level1",
+                "next_level": "level1",
                 "method": "get",
                 "token": None,
             },
@@ -90,7 +90,7 @@ async def level1_post(request: Request, pin: str = Form(...)):
     if pin == CORRECT_PIN_1:
         return templates.TemplateResponse(
             "success.html",
-            {"request": request, "level": "level 1", "next_level": "/level2"},
+            {"request": request, "level": "level 1", "next_level": "level2"},
         )
     else:
         return level1_send_index(request, True)
@@ -108,7 +108,7 @@ def get_token_db() -> set[str]:
 
 def save_token_db(data: set[str]):
     with open(TOKEN_DB_FILE, "w") as f:
-        json.dump({"tokens": data}, f)
+        json.dump({"tokens": list(data)}, f)
 
 
 def save_new_token(token: str):
@@ -163,7 +163,7 @@ async def level2_post_with_token(
     if pin == CORRECT_PIN_2 and valid_token:
         return templates.TemplateResponse(
             "success.html",
-            {"request": request, "level": "level 2", "next_level": "/level3"},
+            {"request": request, "level": "level 2", "next_level": "level3"},
         )
     else:
         return level2_send_index(request, True)
