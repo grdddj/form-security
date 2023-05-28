@@ -5,7 +5,7 @@ import re
 import sys
 
 URL = "http://localhost:9001"
-BAD_PIN = "Špatný PIN"
+BAD_PIN = "Wrong PIN"
 
 
 def _request_successful(response_text: str) -> bool:
