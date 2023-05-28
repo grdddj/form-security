@@ -4,12 +4,9 @@ import requests
 import re
 import sys
 
-URL = "http://localhost:9001"
-BAD_PIN = "Wrong PIN"
-
 
 def _request_successful(response_text: str) -> bool:
-    return BAD_PIN not in response_text
+    return "Wrong PIN" not in response_text
 
 
 def solve_level_0():
@@ -98,6 +95,11 @@ def solve_level_3():
 
 
 if __name__ == "__main__":
+    if "prod" in sys.argv:
+        URL = "https://grdddj.eu/form_security"
+    else:
+        URL = "http://localhost:9001"
+
     if len(sys.argv) > 1:
         level = int(sys.argv[1])
         func = f"solve_level_{level}"
