@@ -36,7 +36,7 @@ TOKEN_SESSION_DB_FILE = HERE / "token_session_db.json"
 
 @app.get("/")
 def main():
-    return RedirectResponse(url="/level0")
+    return RedirectResponse(url="level0")
 
 
 @app.get("/level0")
