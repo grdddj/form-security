@@ -1,8 +1,9 @@
 from __future__ import annotations
 
-import requests
 import re
 import sys
+
+import requests
 
 
 def _request_successful(response_text: str) -> bool:

@@ -3,16 +3,14 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 import json
+from pathlib import Path
 
-from fastapi import FastAPI, Request, Form  # type: ignore
+from fastapi import FastAPI, Form, Request  # type: ignore
 from fastapi.templating import Jinja2Templates
-
 from starlette.responses import RedirectResponse
 
-from common import get_logger, LoggingMiddleware, generate_random_id
-
+from common import LoggingMiddleware, generate_random_id, get_logger
 
 HERE = Path(__file__).parent
 log_file_path = HERE / "app.log"
